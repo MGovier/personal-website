@@ -7,8 +7,6 @@ const activities = [
   "arguing with the TypeScript compiler",
   "refactoring middleware for the 4th time",
   "adding context.Context to everything",
-  "writing Node.js streams nobody asked for",
-  "converting class components to hooks",
   "explaining goroutines at parties",
   "npm installing the entire internet",
   "debugging with console.log and prayers",
@@ -27,6 +25,13 @@ const activities = [
   "benchmarking code that runs once a day",
   "fighting with CORS in development",
   "implementing outrageously complex log cryptography then losing the keys",
+  "debugging CrashLoopBackOff at 2am",
+  "explaining to finance why we need more nodes",
+  "adding dependencies to fix dependency issues",                                                                                                                                                                                                         
+  "renaming things for the 3rd time today",                                                                                                                                                                                                            ,
+  "asking AI to write all the tests",
+  "automating a task that takes 30 seconds",
+  "reading docs after the code doesn't work"
 ];
 
 export default function TerminalStatus() {
@@ -36,13 +41,8 @@ export default function TerminalStatus() {
     "typing"
   );
 
-  const getShuffledActivities = useCallback(() => {
-    const shuffled = [...activities];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
+  const getShuffledActivities = useCallback((): string[] => {
+    return (Array.from(activities) as string[]).sort(() => Math.random() - 0.5);
   }, []);
 
   const [shuffled, setShuffled] = useState<string[]>([]);
