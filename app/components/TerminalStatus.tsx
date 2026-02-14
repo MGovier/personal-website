@@ -27,8 +27,8 @@ const activities = [
   "implementing outrageously complex log cryptography then losing the keys",
   "debugging CrashLoopBackOff at 2am",
   "explaining to finance why we need more nodes",
-  "adding dependencies to fix dependency issues",                                                                                                                                                                                                         
-  "renaming things for the 3rd time today",                                                                                                                                                                                                            ,
+  "adding dependencies to fix dependency issues",
+  "renaming things for the 3rd time today",
   "asking AI to write all the tests",
   "automating a task that takes 30 seconds",
   "reading docs after the code doesn't work"
@@ -42,7 +42,7 @@ export default function TerminalStatus() {
   );
 
   const getShuffledActivities = useCallback((): string[] => {
-    return (Array.from(activities) as string[]).sort(() => Math.random() - 0.5);
+    return [...activities].sort(() => Math.random() - 0.5);
   }, []);
 
   const [shuffled, setShuffled] = useState<string[]>([]);
