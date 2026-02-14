@@ -38,15 +38,6 @@ export default function Home() {
         {/* Links */}
         <nav className="reveal-up delay-700 mt-12 flex items-center gap-8 font-mono text-sm tracking-wide text-foreground/50">
           <a
-            href="https://github.com/mgovier"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-glow"
-          >
-            GitHub
-          </a>
-          <span className="text-cyan/20">&#x2f;&#x2f;</span>
-          <a
             href="https://linkedin.com/in/merlingovier"
             target="_blank"
             rel="noopener noreferrer"
